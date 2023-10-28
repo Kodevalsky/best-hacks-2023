@@ -17,11 +17,11 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'skillsprout.settings')
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'your_database_name',
-        'USER': 'your_database_user',
-        'PASSWORD': 'your_database_password',
-        'HOST': 'your_database_host',
-        'PORT': 'your_database_port',
+        'NAME': 'skillssprout',
+        'USER': 'kovalsky',
+        'PASSWORD': 'password',
+        'HOST': 'localhost',
+        'PORT': 3306,
     }
 }
 
