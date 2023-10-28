@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css"> <!-- Link to the CSS file -->
+    <title>Hello, World!</title>
+</head>
+<body>
+
+    <div class="navbar">
+        <img src="{% static 'image1.png' %}" alt="Logo">
+        <div class="navbar-buttons">
+            <a href="#">Logowanie</a>
+            <a href="#">Rejestracja</a>
+        </div>
+    </div>
+    
+    <div class="search-container">
+        <div class="search-title">Wyszukiwarka placeholder</div>
+        <div class="search-inputs">
+            <input type="text" placeholder="Miasto" />
+            <input type="text" placeholder="Czego szukasz?" />
+            <button>Szukaj</button>
+        </div>
+    </div>
+    <div class="offers-section">
+        <h2>Promowane oferty</h2>
+        <div class="offers-container">
+            <div class="offer">
+                <img src="offer1.jpg" alt="Offer 1">
+                <div class="offer-content">
+                    <h3>Offer Title 1</h3>
+                    <p>Description of the offer goes here.</p>
+                </div>
+            </div>
+            <div class="offer">
+                <img src="offer2.jpg" alt="Offer 2">
+                <div class="offer-content">
+                    <h3>Offer Title 2</h3>
+                    <p>Description of the offer goes here.</p>
+                </div>
+            </div>
+            <div class="offer">
+                <img src="offer3.jpg" alt="Offer 3">
+                <div class="offer-content">
+                    <h3>Offer Title 3</h3>
+                    <p>Description of the offer goes here.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

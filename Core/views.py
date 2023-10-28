@@ -1,8 +1,5 @@
 from django.shortcuts import render
 
-# Create your views here.
-
-#Krzysztofowe 
 def index(request):
     return render(request, 'index.html', {})
 
@@ -26,4 +23,3 @@ def your_visits(request):
 
 def single_visit(request):
     return render(request, 'single_visit.html', {})
-
