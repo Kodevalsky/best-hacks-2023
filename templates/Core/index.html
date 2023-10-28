@@ -11,15 +11,21 @@
 <body>
 
     <div class="navbar">
-        <img src="{% static 'image1.png' %}" alt="Logo">
+        <p><a href="{% url 'index' %}"><img src="{% static 'logo_skillsprout2.png'%}" alt="Logo"></a></p>
         <div class="navbar-buttons">
-            <a href="#">Logowanie</a>
-            <a href="#">Rejestracja</a>
+            <a href="{% url 'about_us' %}" id="about_usBtn">O nas</a>
+            <a href="#" id="loginBtn">Logowanie</a>
+            <a href="#" id="registerBtn">Rejestracja</a>
         </div>
     </div>
     
     <div class="search-container">
-        <div class="search-title">Wyszukiwarka placeholder</div>
+        <video autoplay muted loop id="backgroundVideo">
+            <source src="{% static 'video1.mp4'%}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="search-box">
+        <div class="search-title">Znajdź to czego potrzebujesz, najtaniej</div>
         <div class="search-inputs">
             <input type="text" placeholder="Miasto" />
             <input type="text" placeholder="Czego szukasz?" />

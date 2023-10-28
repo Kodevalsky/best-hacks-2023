@@ -117,3 +117,195 @@ body {
     font-size: 16px;
     color: #666;
 }
+
+.offers-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 40px;
+    gap: 30px; /* Added gap to create distance between rows of offers */
+}
+
+footer {
+    background-color: #333333; /* Same color as navbar */
+    color: #ffffff; /* Text color */
+    text-align: center;
+    padding: 50px 20px; /* Padding for top-bottom and left-right */
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-content {
+    max-width: 1200px; /* Maximum width of content */
+    margin: auto; /* Center the content */
+    font-size: 16px; /* Font size of text */
+}
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 4; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.4); 
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto; 
+    padding: 40px;
+    border: 1px solid #888;
+    width: 400px; /* Increased width */
+    border-radius: 20px; /* Rounded corners */
+    transition: transform 0.3s ease-out; /* Transition for modal appearance */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.form-group {
+    margin-bottom: 0px; /* Reduced from 15px to bring elements closer */
+    margin-top: 0px; /* Added this to reduce distance from the top */
+}
+
+.form-group input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 20px; /* Rounded corners for inputs */
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    width: calc(100% - 20px);
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 20px; /* Rounded corners for the button */
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease; /* Transition for button hover */
+}
+button[type="submit"]:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+.form-group select,
+.form-group input {
+    width: 100%; /* full width */
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.form-group select {
+    appearance: none; /* Remove default appearance */
+    background: url('path_to_your_dropdown_arrow_image') no-repeat right; /* Add a custom dropdown arrow image */
+    background-position: right 10px center;
+    padding-right: 30px; /* Prevent text from overlapping the custom dropdown arrow */
+}
+.date-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.date-container select,
+.date-container input {
+    width: 30%; /* Adjust based on your preference */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+.search-inputs input[type="text"],
+.search-inputs button {
+    position: relative; /* Make sure these elements are positioned */
+    z-index: 3; /* Set a z-index higher than the pseudo-element */
+}
+
+.search-box {
+    background-color: rgba(255, 255, 255, 0.99); /* white with 20% opacity */
+    border-radius: 50px; /* round corners */
+    padding: 20px;
+    text-align: center;
+    width: 90%; /* or whatever width you prefer */
+    margin: 0 auto;
+    z-index: 3;
+}
+.popup-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 40px;
+    background-color: white;
+    width: 400px;
+    text-align: center;
+    border-radius: 25px;
+}
+
+.input-container {
+    margin-bottom: 20px;
+}
+
+input[type=email],
+input[type=password] {
+    width: 90%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.submit-btn {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background-color: #45a049;
+}
+
+#featured-offers-title {
+    font-size: 55px; /* Adjust the font size as needed */
+    font-weight: bold; /* Makes the text bold */
+    color: #000; /* Adjust the color as needed */
+    text-align: center; /* Center aligns the text */
+    margin-bottom: 20px; /* Adds some space below the title */
+}
+
+/* Tu krzysztof edytuje sekcje About Us */
+
+.about_us_box {
+    display: flex;
+    align-items: center; /* Vertically centers the content */
+    justify-content: center; /* Horizontally centers the content */
+    height: 400px;
+    margin: 120px 320px;
+  
+}
+
+.about_us_box h1 {
+    font-size: 24px; /* Example font size */
+    color: #333; /* Example text color */
+    margin: 20px;
+    text-align: justify;
+    /* Add more styles as needed */
+}

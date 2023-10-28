@@ -10,7 +10,7 @@ def login(request):
     return render(request, 'login.html', {})
 
 def about_us(request):
-    return render(request, 'about_us.html', {})
+    return render(request, 'Core/about_us.html', {})
 
 def offers(request):
     return render(request, 'offers.html', {})
