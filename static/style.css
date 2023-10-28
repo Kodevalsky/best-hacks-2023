@@ -188,6 +188,7 @@ body {
     font-size: 16px;
     color: #666;
 }
+
 .offers-container {
     display: flex;
     justify-content: space-between;
@@ -359,4 +360,22 @@ input[type=password] {
     color: #000; /* Adjust the color as needed */
     text-align: center; /* Center aligns the text */
     margin-bottom: 20px; /* Adds some space below the title */
+}
+/* Tu krzysztof edytuje sekcje About Us */
+
+.about_us_box {
+    display: flex;
+    align-items: center; /* Vertically centers the content */
+    justify-content: center; /* Horizontally centers the content */
+    height: 400px;
+    margin: 120px 320px;
+  
+}
+
+.about_us_box h1 {
+    font-size: 24px; /* Example font size */
+    color: #333; /* Example text color */
+    margin: 20px;
+    text-align: justify;
+    /* Add more styles as needed */
 }

@@ -48,7 +48,7 @@ def login_view(request):
         return render(request, 'Core/index.html', {})
 
 def about_us(request):
-    return render(request, 'about_us.html', {})
+    return render(request, 'Core/about_us.html', {})
 
 def offers(request):
     return render(request, 'offers.html', {})
