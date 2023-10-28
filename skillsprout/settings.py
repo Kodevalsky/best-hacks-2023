@@ -70,6 +70,10 @@ TEMPLATES = [
     },
 ]
 
+MEDIA_ROOT = BASE_DIR / 'images'
+MEDIA_URL = '/images/'
+
+
 WSGI_APPLICATION = 'skillsprout.wsgi.application'
 
 

@@ -7,8 +7,14 @@ def index(request):
     register = RegisterForm()
     login = LoginForm()
     PromotedOffers = Announcement.objects.filter(promoted=True)
+    images = []
+    for offer in PromotedOffers:
+        image = AnnouncementImages.objects.filter(announcement_id=offer.id).first()
+        images.append(image)
+        print(image)
+    zip_list = zip(PromotedOffers, images)
     context = {
-        'offers': PromotedOffers,
+        'offers': zip_list,
         'regform' : register,
         'logform' : login
     }
