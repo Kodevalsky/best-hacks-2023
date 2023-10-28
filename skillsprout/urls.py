@@ -16,7 +16,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from Core import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    #Krzysztofowe
+    path('index/', views.index, name="index"),
+    path('register/', views.register, name="register"),
+    path('login/', views.login, name="login"),
+    path('about_us/', views.about_us, name="about_us"),
+    path('offers/', views.offers, name="offers"),
+    path('single_offer/', views.single_offer, name="single_offer"),
+    path('your_visits/', views.your_visits, name="your_visits"),
+    path('single_visit/', views.single_visit, name="single_visit"),
 ]
