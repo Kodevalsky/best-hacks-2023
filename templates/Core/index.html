@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+{% load static %}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css"> <!-- Link to the CSS file -->
+    <link rel="stylesheet" href="{% static "style.css" %}"> <!-- Link to the CSS file -->
     <title>Hello, World!</title>
 </head>
 <body>
@@ -68,12 +69,12 @@
                 </div>
                 
                 <button type="submit" class="submit-btn">Login</button>
-            </form>
+            </form> 
         </div>
     </div>
     
     <div class="navbar">
-        <img src="image1.png" alt="Logo">
+        <img src="{% static "logo_skillsprout2.png"%}" alt="Logo">
         <div class="navbar-buttons">
             <a href="#" id="loginBtn">Logowanie</a>
             <a href="#" id="registerBtn">Rejestracja</a>
@@ -82,7 +83,7 @@
     
     <div class="search-container">
         <video autoplay muted loop id="backgroundVideo">
-            <source src="video1.mp4" type="video/mp4">
+            <source src="{% static "video1.mp4"%}" type="video/mp4">
             Your browser does not support the video tag.
         </video>
         <div class="search-box">
@@ -146,6 +147,6 @@
             Strona stworzona przez zespół projektowy PIWO
         </div>
     </footer>
-    <script src="registration.js"></script>      
+    <script src="{% static "registration.js" %}"></script>      
 </body>
 </html>
