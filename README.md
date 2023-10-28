@@ -15,3 +15,4 @@ let young people earn experience needed in the modern job market. It also helps 
 - Django
 - HTML + CSS
 - Google Maps API
+- mysqlclient

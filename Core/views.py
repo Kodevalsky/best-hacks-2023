@@ -1,13 +1,51 @@
 from django.shortcuts import render
+from Offer.models import Announcement, AnnouncementImages, Review, Comment
+from User.forms import RegisterForm, LoginForm
+from User.models import User
 
 def index(request):
-    return render(request, 'index.html', {})
+    register = RegisterForm()
+    login = LoginForm()
+    PromotedOffers = Announcement.objects.filter(promoted=True)
+    context = {
+        'offers': PromotedOffers,
+        'regform' : register,
+        'logform' : login
+    }
+    if request.method == 'GET':
+        return render(request, 'Core/index.html', context)
+    
 
 def register(request):
-    return render(request, 'register.html', {})
+    if request.method == 'POST':
+        registerdata = RegisterForm(request.POST)
+        if registerdata.is_valid():
+            registerobj = registerdata.save(commit=False)
+            registerobj.set_password(registerobj.password)
+            registerobj.save()
+            return render(request, 'Core/index.html', context)
+        else:
+            print(registerdata.errors.as_data())
+            return render(request, 'Core/index.html', {'form': register})
+    else:
+        return render(request, 'Core/index.html', {'form': register})
 
-def login(request):
-    return render(request, 'login.html', {})
+from django.contrib.auth import authenticate, login
+from django.shortcuts import render, redirect
+
+def login_view(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            return redirect('index')
+        else:
+            context = {'error': 'Invalid username or password'}
+            return render(request, 'Core/index.html', context)
+    else:
+        return render(request, 'Core/index.html', {})
 
 def about_us(request):
     return render(request, 'Core/about_us.html', {})
