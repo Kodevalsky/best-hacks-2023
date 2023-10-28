@@ -1,7 +1,9 @@
 from django.shortcuts import render
 
 def index(request):
-    return render(request, 'Core/index.html', {})
+    #data = User.objects.all()
+    context = {"napis": "Witaj w Skillsprout!"}
+    return render(request, 'Core/index.html', context)
 
 def register(request):
     return render(request, 'register.html', {})
