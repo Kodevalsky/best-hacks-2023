@@ -1,8 +1,23 @@
 from django.shortcuts import render
+from .forms import AnnouncementForm
 
 def index(request):
     #data = User.objects.all()
-    context = {"napis": "Witaj w Skillsprout!"}
+    if request.method == "POST":
+        form = AnnouncementForm(request.POST)
+        if form.is_valid():
+            title = form.cleaned_data.get("title")
+            location = form.cleaned_data.get("location")
+            announcements = AnnouncementForm.objects.filter(
+                title__startwith = title,
+                location__startwith = location
+            )
+            context = {"form":form, "announcements":announcements}
+        else:
+            context = {"form":form}
+    else:
+        form = AnnouncementForm()
+        context = {"form":form}
     return render(request, 'Core/index.html', context)
 
 def register(request):
