@@ -379,3 +379,6 @@ input[type=password] {
     text-align: justify;
     /* Add more styles as needed */
 }
+.modal-content{
+    margin-top:8%;
+}
