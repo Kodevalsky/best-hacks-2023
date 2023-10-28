@@ -21,7 +21,7 @@ from Core import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     #Krzysztofowe
-    path('index/', views.index, name="index"),
+    path('', views.index, name="index"),
     path('register/', views.register, name="register"),
     path('login/', views.login, name="login"),
     path('about_us/', views.about_us, name="about_us"),
