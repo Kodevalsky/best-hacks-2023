@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -9,7 +11,7 @@
 <body>
 
     <div class="navbar">
-        <img src="image1.png" alt="Logo">
+        <img src="{% static 'image1.png' %}" alt="Logo">
         <div class="navbar-buttons">
             <a href="#">Logowanie</a>
             <a href="#">Rejestracja</a>
