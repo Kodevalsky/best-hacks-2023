@@ -600,3 +600,38 @@ a:link{
     color:#fffefb;
     font-weight: 900;
 }
+.pogczamp1{
+    height:100%;
+    padding-top: 60px;
+    padding-bottom:  50px;
+    background-color: #e3e4e5;
+    border-radius: 20px;
+
+}
+
+.stylforma{
+    margin-top:0px;
+    margin-bottom: 30px;
+    margin-left: 200px;
+    width: 400px;
+}
+
+.styltekstu{
+    font-size: 20px;
+    font-weight: 600;
+    margin-left:200px;
+}
+
+.tytulkrula{
+    font-size: 40px;
+    font-weight: 800;
+    margin-left:18%;
+    margin-bottom: 40px;
+    margin-top: 0px;
+    padding-top: 5px;
+}
+
+.bootstrapxdddd{
+    width: 400px!important;
+    margin-left: 200px;
+}
