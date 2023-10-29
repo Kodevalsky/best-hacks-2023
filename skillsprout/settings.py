@@ -71,7 +71,7 @@ TEMPLATES = [
 ]
 
 MEDIA_ROOT = BASE_DIR / 'images'
-MEDIA_URL = 'images/'
+MEDIA_URL = '/'
 
 
 WSGI_APPLICATION = 'skillsprout.wsgi.application'
@@ -91,6 +91,8 @@ DATABASES = {
     }
 }
 
+
+LOGOUT_REDIRECT_URL = 'index'
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators

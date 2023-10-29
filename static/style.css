@@ -373,6 +373,7 @@ input[type=password] {
     display: flex;
     justify-content: space-between;
 }
+
 .box {
     height: 1500px;
     border-radius: 80px; /* Adjust the value for more or less rounding */

@@ -19,6 +19,8 @@ from django.urls import path
 from Core import views
 from django.conf.urls.static import static
 from django.conf import settings
+from django.contrib.auth.views import LogoutView
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -29,7 +31,8 @@ urlpatterns = [
     path('about_us/', views.about_us, name="about_us"),
     path('offers/', views.offers, name="offers"),
     path('single_offer/', views.single_offer, name="single_offer"),
-    path('your_visits/', views.your_visits, name="your_visits"),
-    path('single_visit/', views.single_visit, name="single_visit"),
+    path('add_announcement/', views.add_announcement, name="add_announcement"),
+    path('profile/', views.profile, name="profile"),
+    path('logout/', LogoutView.as_view(), {'next_page': settings.LOGOUT_REDIRECT_URL}, name="logout"),
 ]  + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
 
