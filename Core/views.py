@@ -6,7 +6,6 @@ from User.models import User
 from django.contrib.auth import authenticate, login
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-from Offer.forms import AnnouncementForm
 
 def index(request):
     register = RegisterForm()
@@ -36,7 +35,8 @@ def index(request):
                 location__startswith = location
             )
             context['offers'] = zip(announcements, images)
-            context['form'] = form
+            exampleform = AnnouncementForm()
+            context['form'] = exampleform
         else:
             context['form'] = form
     else:
@@ -53,9 +53,9 @@ def register(request):
             return render(request, 'Core/index.html', context)
         else:
             print(registerdata.errors.as_data())
-            return render(request, 'Core/index.html', {'form': register})
+            return redirect('index')
     else:
-        return render(request, 'Core/index.html', {'form': register})
+        return redirect('index')
 
 def login_view(request):
     if request.method == 'POST':

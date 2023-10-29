@@ -6,7 +6,7 @@ class AnnouncementForm(forms.ModelForm):
         required=False,
         widget=forms.widgets.TextInput(
             attrs={
-                "placeholder": "Miasto",
+                "placeholder": "Czego szukasz?",
                 "class": "column is-one-third",
             }
         ),
@@ -16,7 +16,7 @@ class AnnouncementForm(forms.ModelForm):
         required=False,
         widget=forms.widgets.TextInput(
             attrs={
-                "placeholder": "Czego szukasz?",
+                "placeholder": "Miasto",
                 "class": "column is-one-third",
             }
         ),
