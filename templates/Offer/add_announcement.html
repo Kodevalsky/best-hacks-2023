@@ -6,19 +6,21 @@
     <link rel="stylesheet" href="{% static 'style.css' %}">
     <div class="row helper-cl">
     <div class="col-md-3"></div>
-    <div class="col-md-5 pogczamp1"><form action="/submit_form" method="POST">
+    <div class="col-md-5 pogczamp1">
+        <form method="POST">
+        {% csrf_token %}
         <h2 class="tytulkrula">Utwórz nowe ogłoszenie</h2>
         <label for="title" class="styltekstu">Tytuł:</label><br>
-        <input type="text" id="title" name="title" class ="stylforma" required><br>
+        {{ form.title }}
         
         <label for="description" class="styltekstu">Opis:</label><br>
-        <textarea id="description" name="description" class ="stylforma" rows="4" cols="50" required></textarea><br>
+        {{ form.description }}
         
         <label for="location" class="styltekstu">Miejsce:</label><br>
-        <input type="text" id="location" class ="stylforma" name="location" required><br>
+        {{ form.location }}
         
         <label for="cost" class="styltekstu">Cena:</label><br>
-        <input type="number" id="cost" class ="stylforma" name="cost" required><br><br>
+        {{ form.cost }}
         
         <button type="submit" class = "bootstrapxdddd">Utwórz ogłoszenie</button>
     </form></div>

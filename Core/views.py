@@ -6,6 +6,7 @@ from User.models import User
 from django.contrib.auth import authenticate, login
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
+from Offer.forms import AnnouncementAddForm
 
 def index(request):
     register = RegisterForm()
@@ -50,7 +51,7 @@ def register(request):
             registerobj = registerdata.save(commit=False)
             registerobj.set_password(registerobj.password)
             registerobj.save()
-            return render(request, 'Core/index.html', context)
+            return render(request, 'Core/index.html', {})
         else:
             print(registerdata.errors.as_data())
             return redirect('index')
@@ -93,9 +94,20 @@ def single_offer(request, announcement_id):
 
 @login_required
 def add_announcement(request):
-    form = AnnouncementForm()
-    context = {'form': form}
-    return render(request, 'Offer/add_announcement.html', context)
+    if request.method == 'POST':
+        form = AnnouncementAddForm(request.POST)
+        if form.is_valid():
+            announcement = form.save(commit=False)
+            announcement.username = request.user
+            announcement.save()
+            return redirect('index')
+        else:
+            print("HERE"+str(form.errors.as_data()))
+            return redirect('index')
+    else:
+        form = AnnouncementAddForm()
+        context = {'form': form}
+        return render(request, 'Offer/add_announcement.html', context)
 
 @login_required
 def profile(request):
