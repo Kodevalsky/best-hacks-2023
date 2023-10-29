@@ -29,5 +29,4 @@ urlpatterns = [
     path('single_offer/', views.single_offer, name="single_offer"),
     path('your_visits/', views.your_visits, name="your_visits"),
     path('single_visit/', views.single_visit, name="single_visit"),
-
 ]

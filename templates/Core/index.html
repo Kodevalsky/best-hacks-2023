@@ -54,13 +54,15 @@
             <source src="{% static 'video1.mp4'%}" type="video/mp4">
             Your browser does not support the video tag.
         </video>
-        <div class="search-box">
+        <div class="search-box"></div>
         <div class="search-title">Znajdź to czego potrzebujesz, najtaniej</div>
-        <div class="search-inputs">
-            <input type="text" placeholder="Miasto" />
-            <input type="text" placeholder="Czego szukasz?" />
-            <button>Szukaj</button>
-        </div>
+        <div class="column is-one-third">
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                {{ announcements.as_p }}
+            <button class="button is-success is-fullwidth is-medium mt-5"
+            type="submit">Szukaj</button>
         </div>
     </div>
     <div class="offers-section">
