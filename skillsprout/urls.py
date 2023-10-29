@@ -30,9 +30,9 @@ urlpatterns = [
     path('login/', views.login_view, name="login"),
     path('about_us/', views.about_us, name="about_us"),
     path('offers/', views.offers, name="offers"),
-    path('single_offer/', views.single_offer, name="single_offer"),
     path('add_announcement/', views.add_announcement, name="add_announcement"),
     path('profile/', views.profile, name="profile"),
+    path('offer/<int:announcement_id>', views.single_offer, name="single_offer"),
     path('logout/', LogoutView.as_view(), {'next_page': settings.LOGOUT_REDIRECT_URL}, name="logout"),
 ]  + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
 

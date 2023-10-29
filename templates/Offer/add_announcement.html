@@ -1,0 +1,18 @@
+{% extends 'Core/base.html' %}
+{% load static %}
+{% block content %}
+{% include 'Core/navbar.html'%}
+<link rel="stylesheet" href="{% static "style.css" %}"> <!-- Link to the CSS file -->
+<div class="sentinopapiez">
+<form method="POST">
+    {% csrf_token %}
+    {% for element in form %}
+        <div class="sentino2137">
+            {{ element }}
+        </div>
+    {% endfor %}
+    <button type="submit" class ="przycisksentino">Dodaj</button>
+</form>
+</div>
+    {% include 'Core/footer.html'%}
+{% endblock %}

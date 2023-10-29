@@ -6,6 +6,7 @@ from User.models import User
 from django.contrib.auth import authenticate, login
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
+from Offer.forms import AnnouncementForm
 
 def index(request):
     register = RegisterForm()
@@ -76,12 +77,18 @@ def about_us(request):
 def offers(request):
     return render(request, 'offers.html', {})
 
-def single_offer(request):
-    return render(request, 'single_offer.html', {})
+def single_offer(request, announcement_id):
+    offerobj = Announcement.objects.get(id=announcement_id)
+    imgobj = AnnouncementImages.objects.filter(announcement_id=announcement_id).first()
+    usrobj = User.objects.get(username=offerobj.username)
+    context = {'offer': offerobj, 'img': imgobj, 'usr': usrobj}
+    return render(request, 'Offer/offerpage.html', context)
 
 @login_required
 def add_announcement(request):
-    return render(request, 'add_announcement.html', {})
+    form = AnnouncementForm()
+    context = {'form': form}
+    return render(request, 'Offer/add_announcement.html', context)
 
 @login_required
 def profile(request):

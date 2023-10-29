@@ -132,15 +132,15 @@ body {
 }
 
 .search-inputs button {
-    padding: 10px 40px;
-    border: none;
-    border-radius: 15px;
-    background-color: #83A638;
-    color: white;
-    font-size: 25px;
-    cursor: pointer;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease;
+    padding: 10px 40px!important; 
+    border: none!important;
+    border-radius: 15px!important;
+    background-color: #83A638!important;
+    color: white!important;
+    font-size: 25px!important;
+    cursor: pointer!important;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1)!important;
+    transition: background-color 0.3s ease!important;
 }
 /* ... (previous styles) ... */
 
@@ -553,4 +553,36 @@ a:link{
 
 .sentino4{
     text-align: center;
+}
+
+.about_us_box {
+    display: flex;
+    align-items: center; /* Vertically centers the content */
+    justify-content: center; /* Horizontally centers the content */
+    height: 70vh;
+    margin: 120px 320px;
+  
+}
+
+.about_us_box h1 {
+    font-size: 24px; /* Example font size */
+    color: #333; /* Example text color */
+    margin: 20px;
+    text-align: justify;
+    /* Add more styles as needed */
+}
+
+.sentino2137{
+    margin-left: 200px;
+    margin-top: 30px;
+    width: 150px;
+}
+.sentinopapiez{
+    background-color: #000;
+    margin: 50px;
+    align-items: center;
+}
+.przycisksentino{
+    width:150px!important;
+    margin-left:150px;
 }

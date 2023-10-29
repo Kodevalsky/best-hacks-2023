@@ -1,6 +1,8 @@
 {% extends 'Core/base.html' %}
     {% block content %}
+    {% load static%}
     {% include 'Core/navbar.html'%}
+    <link rel="stylesheet" href="{% static "style.css" %}">
     <div class="about_us_box">
         <h1>Jako członkowie zespołu [50 49 57 4F] jesteśmy grupą młodych i ambitnych studentów. Celem tworzonego przez nas projektu jest umożliwienie osobom, które nie posiadają doświadczenia zawodowego w swoich dziedzinach wejście na rynek pracy i oferowanie świadczonych przez siebie usług w obniżonych cenach. Takie rozwiązanie dawałoby młodym ludziom szansę zaistnieć na rynku pracy i zdobyć cenne umiejętności, a osoby, których nie stać na korzystanie z usług profesjonalistów mogłyby skorzystać z usług osób o mniejszym doświadczeniu w obniżonej cenie, lub za darmo</h1>
     </div>

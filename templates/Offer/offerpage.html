@@ -1,100 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css"> <!-- Link to the CSS file -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <title>Hello, World!</title>
-
-</head>
-<body>
-    <div id="registrationModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <form id="registrationForm">
-                <h2>Rejestracja</h2>
-                <div class="form-group">
-                    <input type="text" id="username" placeholder="Username" required>
-                </div>
-                <div class="form-group">
-                    <input type="text" id="firstName" placeholder="First Name" required>
-                </div>
-                <div class="form-group">
-                    <input type="text" id="lastName" placeholder="Last Name" required>
-                </div>
-                <div class="form-group">
-                    <select id="gender" required>
-                        <option value="" disabled selected>Gender</option>
-                        <option value="male">Male</option>
-                        <option value="female">Female</option>
-                        <option value="non-binary">Non-binary</option>
-                    </select>
-                </div>
-                <div class="form-group date-container">
-                    <select id="day" required>
-                        <!-- Days will be populated here by JavaScript -->
-                    </select>
-                    <select id="month" required>
-                        <!-- Months will be populated here by JavaScript -->
-                    </select>
-                    <input type="number" id="year" placeholder="Year" required>
-                </div>
-                <div class="form-group">
-                    <input type="tel" id="phone" placeholder="Phone Number" required>
-                </div>
-                <div class="form-group">
-                    <input type="email" id="email" placeholder="Email" required>
-                </div>
-                <div class="form-group">
-                    <input type="password" id="password" placeholder="Password" required>
-                </div>
-                <div class="form-group">
-                    <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
-                </div>
-                <button type="submit">Zarejestruj</button>
-            </form>
-        </div>
-    </div>
-    <div id="loginPopup" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Logowanie</h2>
-            
-            <form>
-                <div class="input-container">
-                    <input type="email" placeholder="E-mail" required>
-                </div>
-                <div class="input-container">
-                    <input type="password" placeholder="Password" required>
-                </div>
-                
-                <button type="submit" class="submit-btn">Login</button>
-            </form>
-        </div>
-    </div>
-    
-    <div class="navbar">
-        <img src="image1.png" alt="Logo">
-        <div class="navbar-buttons">
-            <a href="#" id="loginBtn">Logowanie</a>
-            <a href="#" id="registerBtn">Rejestracja</a>
-        </div>
-    </div>
+{% extends 'Core/base.html'%}
+{% load static %}
+{% block content %}
+{% include 'Core/navbar.html'%}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="{% static "style.css" %}">
     <div class="row">
         <div class="col-md-7 psycha_siada1 psycha_siada2" align="center">
-             <img src="image3.jpg" class=" psycha_siada4" alt="Dentist">
-             <div class="psycha_siada5">Usługa dentystyczna gratis placeholder</div>
-             <div class="psycha_siada6">Opis</div>
-             <div class="psycha_siada7">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quam adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus urna. Accumsan in nisl nisi scelerisque eu ultrices. Aliquam etiam erat velit scelerisque in dictum non consectetur a. Nec nam aliquam sem et tortor consequat. In arcu cursus euismod quis viverra nibh cras pulvinar. Aliquam ultrices sagittis orci a scelerisque purus semper eget duis. Tellus elementum sagittis vitae et leo duis ut. Vivamus at augue eget arcu dictum varius duis. Facilisi cras fermentum odio eu feugiat pretium nibh ipsum. Urna cursus eget nunc scelerisque viverra mauris. Elementum integer enim neque volutpat ac tincidunt vitae semper quis. Phasellus faucibus scelerisque eleifend donec. Sit amet est placerat in egestas. Amet facilisis magna etiam tempor orci. </div>
+             <img src="{{ img.image_data.url }}" class=" psycha_siada4" alt="Placeholder">
+             <div class="psycha_siada5">{{ offer.title }}</div>
+             <div class="psycha_siada6">{{ offer.cost }} PLN</div>
+             <div class="psycha_siada7">{{ offer.description }}</div>
             </div>
         <div class="col-md-3 psycha_siada1 psycha_siada3" align="center">
             <img src="image4.png" class="psycha_siada8" alt="User">
-            <div class="kasiaXD">Katarzyna</div>
+            <div class="kasiaXD">{{ usr.first_name }}</div>
             <div class="rating">Liczba opinii: 506, średnia ocen: 4.5 / 5</div>
             <div class="local"> Lokalizacja </div>
-            <div class="half mozliwezemojeserceniewytrzyma">Wrocław<br>Hoene-Wrońskiego 10<br></div>
-            <div class="half kolejnejgodziny">TUTAJ MAPA BY FRONTEND SENIOR DEVELOPER CRISTOPHER MOLA</div>
+            <div class="half mozliwezemojeserceniewytrzyma"><br>{{ offer.location }}<br></div>
             <div class="sentinokrolmuzyki"><button type="button" class="tatuazyk">Zadzwoń</button></div>
         </div>
       </div>
@@ -106,6 +28,6 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    {% include 'Core/footer.html'%}
     <script src="registration.js"></script>      
-</body>
-</html>
+{% endblock %}

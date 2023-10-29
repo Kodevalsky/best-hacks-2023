@@ -1,40 +1,7 @@
 {% extends 'Core/base.html'%}
 {% load static %}
 {% block content %}
-<div id="registrationModal" class="modal">
-    <div class="modal-content"> 
-        <span class="close">&times;</span>
-        <h2>Rejestracja</h2>
-        <form method="POST" action="{% url 'register' %}">
-        {% csrf_token %}
-        {% for element in regform %}
-            <div class="form-group">
-                {{ element }}
-            </div>
-        {% endfor %}
-        <button type="submit" class="submit-btn">Register</button>
-        </form>
-    </div>
-</div>
-<div id="loginPopup" class="modal">
-    <div class="modal-content">
-        <span class="close">&times;</span>
-        <h2>Logowanie</h2>
-        
-        <form method="POST" action="{% url 'login' %}">
-            {% csrf_token %}
-            {% for element in logform %}
-                <div class="form-group">
-                    {{ element }}
-                </div>
-            {% endfor %}
-            <button type="submit">Zaloguj</button>
-            </form>
-    </div>
-</div>
-
 {% include 'Core/navbar.html'%}
-
 <div class="search-container">
     <video autoplay muted loop id="backgroundVideo">
         <source src="{% static 'video1.mp4'%}" type="video/mp4">
@@ -57,7 +24,7 @@
     <div class="offers-container">
         {% for offer, img in offers %}
         <div class="offer">
-            <img src="{{ img.image_data }}" alt="text">
+            <a href="{% url 'single_offer' announcement_id=offer.id %}"><img src="{{ img.image_data.url }}" alt="text"></a>
             <div class="offer-content">
                 <h2>{{ offer.title }}</h2>
                 <p>{{ offer.description }}</p>

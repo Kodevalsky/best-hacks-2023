@@ -8,6 +8,38 @@
         <title>Hello, World!</title>
     </head>
     <body>
+        <div id="registrationModal" class="modal">
+            <div class="modal-content"> 
+                <span class="close">&times;</span>
+                <h2>Rejestracja</h2>
+                <form method="POST" action="{% url 'register' %}">
+                {% csrf_token %}
+                {% for element in regform %}
+                    <div class="form-group">
+                        {{ element }}
+                    </div>
+                {% endfor %}
+                <button type="submit" class="submit-btn">Register</button>
+                </form>
+            </div>
+        </div>
+        <div id="loginPopup" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Logowanie</h2>
+                
+                <form method="POST" action="{% url 'login' %}">
+                    {% csrf_token %}
+                    {% for element in logform %}
+                        <div class="form-group">
+                            {{ element }}
+                        </div>
+                    {% endfor %}
+                    <button type="submit">Zaloguj</button>
+                    </form>
+            </div>
+        </div>
+        
         {% block content %}
 
         {% endblock %}
