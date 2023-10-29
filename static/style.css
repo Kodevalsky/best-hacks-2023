@@ -372,7 +372,7 @@ input[type=password] {
     display: flex;
     align-items: center; /* Vertically centers the content */
     justify-content: center; /* Horizontally centers the content */
-    height: 400px;
+    height: 80vh;
     margin: 120px 320px;
   
 }

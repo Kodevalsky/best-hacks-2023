@@ -3,7 +3,13 @@
     <p><a href="{% url 'index' %}"><img src="{% static 'logo_skillsprout2.png'%}" alt="Logo"></a></p>
     <div class="navbar-buttons">
         <a href="{% url 'about_us' %}" id="about_usBtn">O nas</a>
+        {% if user.is_authenticated %}
+        <a href="{% url 'add_announcement' %}" id="logoutBtn">Dodaj</a>
+        <a href="{% url 'logout' %}" id="logoutBtn">Wyloguj</a>
+        <a href="{% url 'profile' %}" id="logoutBtn">Profil</a>
+        {% else %}
         <a href="#" id="loginBtn">Logowanie</a>
         <a href="#" id="registerBtn">Rejestracja</a>
+        {% endif %}
     </div>
 </div>

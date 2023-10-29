@@ -3,6 +3,9 @@ from .forms import AnnouncementForm
 from Offer.models import Announcement, AnnouncementImages, Review, Comment
 from User.forms import RegisterForm, LoginForm
 from User.models import User
+from django.contrib.auth import authenticate, login
+from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
 
 def index(request):
     register = RegisterForm()
@@ -53,9 +56,6 @@ def register(request):
     else:
         return render(request, 'Core/index.html', {'form': register})
 
-from django.contrib.auth import authenticate, login
-from django.shortcuts import render, redirect
-
 def login_view(request):
     if request.method == 'POST':
         username = request.POST.get('username')
@@ -79,8 +79,10 @@ def offers(request):
 def single_offer(request):
     return render(request, 'single_offer.html', {})
 
-def your_visits(request):
-    return render(request, 'your_visits.html', {})
+@login_required
+def add_announcement(request):
+    return render(request, 'add_announcement.html', {})
 
-def single_visit(request):
-    return render(request, 'single_visit.html', {})
+@login_required
+def profile(request):
+    return render(request, 'profile.html', {})
