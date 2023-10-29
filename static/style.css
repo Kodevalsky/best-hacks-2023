@@ -586,3 +586,17 @@ a:link{
     width:150px!important;
     margin-left:150px;
 }
+
+.papiezowka112{
+    width:100%;
+    background-color: #333333;
+    height: 250px;
+}
+
+.tekstdolny{
+    font-size: 40px;
+    text-align:center;
+    padding-top: 100px;
+    color:#fffefb;
+    font-weight: 900;
+}
