@@ -32,3 +32,4 @@ urlpatterns = [
     path('your_visits/', views.your_visits, name="your_visits"),
     path('single_visit/', views.single_visit, name="single_visit"),
 ]  + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
+

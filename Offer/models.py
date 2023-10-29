@@ -31,5 +31,3 @@ class Comment(models.Model):
     content = models.TextField()
     review_id = models.ForeignKey(Review, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
-
-

@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .forms import AnnouncementForm
 from Offer.models import Announcement, AnnouncementImages, Review, Comment
 from User.forms import RegisterForm, LoginForm
 from User.models import User
@@ -11,16 +12,32 @@ def index(request):
     for offer in PromotedOffers:
         image = AnnouncementImages.objects.filter(announcement_id=offer.id).first()
         images.append(image)
-        print(image)
     zip_list = zip(PromotedOffers, images)
+    form = AnnouncementForm()
     context = {
         'offers': zip_list,
         'regform' : register,
-        'logform' : login
+        'logform' : login,
+        'form'  : form
     }
     if request.method == 'GET':
-        return render(request, 'Core/index.html', context)
-    
+        context['offers'] = zip_list
+    elif request.method == "POST":
+        form = AnnouncementForm(request.POST)
+        if form.is_valid():
+            title = form.cleaned_data.get("title")
+            location = form.cleaned_data.get("location")
+            announcements = Announcement.objects.filter(
+                title__startswith = title,
+                location__startswith = location
+            )
+            context['offers'] = zip(announcements, images)
+            context['form'] = form
+        else:
+            context['form'] = form
+    else:
+        pass
+    return render(request, 'Core/index.html', context)
 
 def register(request):
     if request.method == 'POST':

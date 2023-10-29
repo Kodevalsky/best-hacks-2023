@@ -43,9 +43,12 @@
     <div class="search-box">
     <div class="search-title">Znajdź to czego potrzebujesz, najtaniej</div>
     <div class="search-inputs">
-        <input type="text" placeholder="Miasto" />
-        <input type="text" placeholder="Czego szukasz?" />
-        <button>Szukaj</button>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.location }}
+            {{ form.title }}
+            <button type="submit">Szukaj</button>
+        </form>
     </div>
     </div>
 </div>
