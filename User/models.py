@@ -18,3 +18,4 @@ class User(AbstractUser):
     email = models.EmailField(unique=True)
     avatar = models.ImageField(upload_to='avatars/', null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
+    password = models.CharField(max_length=128)
