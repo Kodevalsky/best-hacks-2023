@@ -16,9 +16,9 @@ def index(request):
     form = AnnouncementForm()
     context = {
         'offers': zip_list,
-        'regform' : register,
-        'logform' : login,
-        'form'  : form
+        'regform': register,
+        'logform': login,
+        'form': form
     }
     if request.method == 'GET':
         context['offers'] = zip_list

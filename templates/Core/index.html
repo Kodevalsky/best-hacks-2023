@@ -45,8 +45,8 @@
     <div class="search-inputs">
         <form method="POST">
             {% csrf_token %}
-            {{ form.location }}
             {{ form.title }}
+            {{ form.location }}
             <button type="submit">Szukaj</button>
         </form>
     </div>
