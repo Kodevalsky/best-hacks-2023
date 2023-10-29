@@ -602,9 +602,8 @@ a:link{
 }
 .pogczamp1{
     height:100%;
-    padding-top: 60px;
+    padding-top: 80px;
     padding-bottom:  50px;
-    background-color: #e3e4e5;
     border-radius: 20px;
 
 }
@@ -612,14 +611,14 @@ a:link{
 .stylforma{
     margin-top:0px;
     margin-bottom: 30px;
-    margin-left: 200px;
+    margin-left: 180px;
     width: 400px;
 }
 
 .styltekstu{
     font-size: 20px;
     font-weight: 600;
-    margin-left:200px;
+    margin-left:180px;
 }
 
 .tytulkrula{
@@ -633,5 +632,13 @@ a:link{
 
 .bootstrapxdddd{
     width: 400px!important;
-    margin-left: 200px;
+    margin-left: 180px;
+}
+
+.helpercl{
+    display:flex;
+    margin-left: 0px!important;
+    margin-right:0px!important;
+    padding-left:0px!important;
+    padding: right 0px !important;
 }

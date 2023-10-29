@@ -6,7 +6,6 @@
         {% if user.is_authenticated %}
         <a href="{% url 'add_announcement' %}" id="addAnnounceent">Dodaj</a>
         <a href="{% url 'logout' %}" id="logoutBtn">Wyloguj</a>
-        <a href="{% url 'profile' %}" id="profileBtn">Profil</a>
         <a href="{% url 'offers' %}" id="offersBtn">Przeglądaj</a>
         {% else %}
         <a href="#" id="loginBtn">Logowanie</a>

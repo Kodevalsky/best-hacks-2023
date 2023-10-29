@@ -1,18 +1,28 @@
 {% extends 'Core/base.html' %}
 {% load static %}
 {% block content %}
-{% include 'Core/navbar.html'%}
-<link rel="stylesheet" href="{% static "style.css" %}"> <!-- Link to the CSS file -->
-<div class="sentinopapiez">
-<form method="POST">
-    {% csrf_token %}
-    {% for element in form %}
-        <div class="sentino2137">
-            {{ element }}
-        </div>
-    {% endfor %}
-    <button type="submit" class ="przycisksentino">Dodaj</button>
-</form>
+    {% include 'Core/navbar.html'%}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <div class="row helper-cl">
+    <div class="col-md-3"></div>
+    <div class="col-md-5 pogczamp1"><form action="/submit_form" method="POST">
+        <h2 class="tytulkrula">Utwórz nowe ogłoszenie</h2>
+        <label for="title" class="styltekstu">Tytuł:</label><br>
+        <input type="text" id="title" name="title" class ="stylforma" required><br>
+        
+        <label for="description" class="styltekstu">Opis:</label><br>
+        <textarea id="description" name="description" class ="stylforma" rows="4" cols="50" required></textarea><br>
+        
+        <label for="location" class="styltekstu">Miejsce:</label><br>
+        <input type="text" id="location" class ="stylforma" name="location" required><br>
+        
+        <label for="cost" class="styltekstu">Cena:</label><br>
+        <input type="number" id="cost" class ="stylforma" name="cost" required><br><br>
+        
+        <button type="submit" class = "bootstrapxdddd">Utwórz ogłoszenie</button>
+    </form></div>
+    <div class="col-md-3"></div>
 </div>
-    {% include 'Core/footer.html'%}
+{% include 'Core/footer.html'%}
 {% endblock %}

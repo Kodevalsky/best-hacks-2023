@@ -1,13 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% exteds 'Core/base.html' %}
+{% block content %}
+    {% include 'Core/navbar.html'%}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles.css"> <!-- Link to the CSS file -->
-    <title>Hello, World!</title>
-</head>
-<body>
+    <link rel="stylesheet" href="styles.css">
     <div class="row">
     <div class="col-md-3 pogczamp2"></div>
     <div class="col-md-6 pogczamp1"><form action="/submit_form" method="POST">
@@ -28,5 +23,5 @@
     </form></div>
     <div class="col-md-3 pogczamp2"></div>
 </div>
-</body>
-</html>
+{% include 'Core/footer.html'%}
+{% endblock %}
