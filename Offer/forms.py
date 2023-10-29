@@ -10,3 +10,4 @@ class AnnouncementForm(forms.ModelForm):
     description = forms.CharField(widget=forms.Textarea, required=True)
     date = forms.DateField(widget=forms.SelectDateWidget, required=True)
     cost = forms.IntegerField(widget=forms.NumberInput,required=True)
+    

@@ -75,7 +75,14 @@ def about_us(request):
     return render(request, 'Core/about_us.html', {})
 
 def offers(request):
-    return render(request, 'offers.html', {})
+    AllObj = Announcement.objects.all()
+    images = []
+    for offer in AllObj:
+        image = AnnouncementImages.objects.filter(announcement_id=offer.id).first()
+        images.append(image)
+    agg = zip(AllObj, images)
+    context = {'agg': agg}
+    return render(request, 'Offer/offers.html', context)
 
 def single_offer(request, announcement_id):
     offerobj = Announcement.objects.get(id=announcement_id)

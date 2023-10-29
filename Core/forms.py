@@ -3,7 +3,7 @@ from Offer.models import Announcement
 
 class AnnouncementForm(forms.ModelForm):
     title = forms.CharField(
-        required=True,
+        required=False,
         widget=forms.widgets.TextInput(
             attrs={
                 "placeholder": "Miasto",
@@ -13,7 +13,7 @@ class AnnouncementForm(forms.ModelForm):
         label="",
     )
     location = forms.CharField(
-        required=True,
+        required=False,
         widget=forms.widgets.TextInput(
             attrs={
                 "placeholder": "Czego szukasz?",
